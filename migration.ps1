@@ -49,7 +49,7 @@ try
                 	& "$siteHomeDir\bin\migrate.exe" $arg1 $arg2 $arg3 | Out-Host
         	}
         
-		if($site -like "<site2>.iborn.net")
+		if($site -like "<site2>")
 		{ 
 			$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
                 	$arg1 = "<site2>.DataAccessLayer.dll"
