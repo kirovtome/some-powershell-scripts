@@ -63,16 +63,16 @@ function backupTasks
 
         catch [Exception]
         {
-            		#Create If not exists the log file
-			If(!(Test-Path -Path $logFile))
-			{
-				New-Item -Path $logFile -ItemType file | Out-Null
-			}
+        	#Create If not exists the log file
+		If(!(Test-Path -Path $logFile))
+		{
+			New-Item -Path $logFile -ItemType file | Out-Null
+		}
 		
-			$ErrorMessage = $_.Exception.Message
-			"Error: {0}" -f $_.Exception.Message | Out-File $logFile -Append
-			Write-Host "There was an error. Please take a look at the log file(s) located at $logFile ."
-			exit 1;  
+		$ErrorMessage = $_.Exception.Message
+		"Error: {0}" -f $_.Exception.Message | Out-File $logFile -Append
+		Write-Host "There was an error. Please take a look at the log file(s) located at $logFile ."
+		exit 1;  
         }			
 }
 
