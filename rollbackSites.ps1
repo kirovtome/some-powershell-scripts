@@ -1,9 +1,9 @@
-﻿Param (
+Param (
     [Parameter(Position=1)]
     [string[]]$sites,
 	
-	[Parameter(Position=2)]
-	[string]$bkpDir
+    [Parameter(Position=2)]
+    [string]$bkpDir
 )
 
 <#
@@ -50,18 +50,18 @@ try
     foreach($site in $sites)
     {
 	
-		If(!(Test-Path -Path $bkpDir\$site.zip))
-		{
-			Write-Output "The required backup file $bkpDir\$site.zip does not exist!"
-			exit 1;
-		}
+	If(!(Test-Path -Path $bkpDir\$site.zip))
+	{
+		Write-Output "The required backup file $bkpDir\$site.zip does not exist!"
+		exit 1;
+	}
 		
-		else
-		{
-			$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
-			Write-Output "Start rolling back the $site in $siteHomeDir"
-			sz x $bkpDir\$site.zip -o"$siteHomeDir" -aoa
-		}
+	else
+	{
+		$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
+		Write-Output "Start rolling back the $site in $siteHomeDir"
+		sz x $bkpDir\$site.zip -o"$siteHomeDir" -aoa
+	}
 		
     }
 	
@@ -69,7 +69,7 @@ try
 
 catch [Exception]
 {
-	#Create If not exists the log file
+    #Create If not exists the log file
     If(!(Test-Path -Path $logFile))
     {
         New-Item -Path $logFile -ItemType file | Out-Null
