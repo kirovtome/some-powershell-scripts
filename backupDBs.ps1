@@ -2,8 +2,8 @@
 	[Parameter(Position=1)]
 	[string]$serverName,
 	
-    [Parameter(Position=2)]
-    [string[]]$databases,
+        [Parameter(Position=2)]
+        [string[]]$databases,
 	
 	[Parameter(Position=3)]
 	[string]$destPath,
