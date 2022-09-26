@@ -1,4 +1,4 @@
-﻿Param (
+Param (
     [Parameter(Position=1)]
     [string[]]$sites
 )
@@ -45,7 +45,7 @@ try
 
 catch [Exception]
 {
-	#Create If not exists the log file
+    #Create If not exists the log file
     If(!(Test-Path -Path $logFile))
     {
         New-Item -Path $logFile -ItemType file | Out-Null
