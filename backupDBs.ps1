@@ -1,18 +1,18 @@
-﻿Param (
-	[Parameter(Position=1)]
-	[string]$serverName,
+Param (
+    [Parameter(Position=1)]
+    [string]$serverName,
 	
-        [Parameter(Position=2)]
-        [string[]]$databases,
+    [Parameter(Position=2)]
+    [string[]]$databases,
 	
-	[Parameter(Position=3)]
-	[string]$destPath,
+    [Parameter(Position=3)]
+    [string]$destPath,
 	
-	[Parameter(Position=4)]
-	[string]$user,
+    [Parameter(Position=4)]
+    [string]$user,
 	
-	[Parameter(Position=5)]
-	[string]$pass
+    [Parameter(Position=5)]
+    [string]$pass
 )
 
 <#
