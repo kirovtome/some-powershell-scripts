@@ -39,13 +39,13 @@ try
 {
     foreach($site in $sites)
     { 
-		Start-Website $site
+	Start-Website $site
     }
 }
 
 catch [Exception]
 {
-	#Create If not exists the log file
+    #Create If not exists the log file
     If(!(Test-Path -Path $logFile))
     {
         New-Item -Path $logFile -ItemType file | Out-Null
