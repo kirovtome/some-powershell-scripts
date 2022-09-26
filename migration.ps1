@@ -42,21 +42,21 @@ try
 
 		if($site -like "<site1>")
 		{ 
-				$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
-                $arg1 = "<site1>.DataAccessLayer.dll"
-                $arg2 = "Configuration"
-                $arg3 = "/startUpConfigurationFile:$siteHomeDir\Web.config"
-                & "$siteHomeDir\bin\migrate.exe" $arg1 $arg2 $arg3 | Out-Host
-        }
+			$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
+                	$arg1 = "<site1>.DataAccessLayer.dll"
+               		$arg2 = "Configuration"
+                	$arg3 = "/startUpConfigurationFile:$siteHomeDir\Web.config"
+                	& "$siteHomeDir\bin\migrate.exe" $arg1 $arg2 $arg3 | Out-Host
+        	}
         
 		if($site -like "<site2>.iborn.net")
 		{ 
-				$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
-                $arg1 = "<site2>.DataAccessLayer.dll"
-                $arg2 = "Configuration"
-                $arg3 = "/startUpConfigurationFile:$siteHomeDir\Web.config"
-                & "$siteHomeDir\bin\migrate.exe" $arg1 $arg2 $arg3 | Out-Host
-        }
+			$siteHomeDir = $(Get-Item -Path IIS:\sites\$site).physicalPath
+                	$arg1 = "<site2>.DataAccessLayer.dll"
+                	$arg2 = "Configuration"
+                	$arg3 = "/startUpConfigurationFile:$siteHomeDir\Web.config"
+                	& "$siteHomeDir\bin\migrate.exe" $arg1 $arg2 $arg3 | Out-Host
+       		}
     
     }
 }
