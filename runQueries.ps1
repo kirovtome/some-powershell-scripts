@@ -1,18 +1,18 @@
 Param (
-	[Parameter(Position=1)]
-	$serverName,
+    [Parameter(Position=1)]
+    $serverName,
 	
     [Parameter(Position=2)]
-	$database,
+    $database,
 	
-	[Parameter(Position=3)]
-	[string[]]$queries,
+    [Parameter(Position=3)]
+    [string[]]$queries,
 	
-	[Parameter(Position=4)]
-	[string]$user,
+    [Parameter(Position=4)]
+    [string]$user,
 	
-	[Parameter(Position=5)]
-	[string]$pass
+    [Parameter(Position=5)]
+    [string]$pass
 )
 
 <#
@@ -60,7 +60,7 @@ try
 
 catch [Exception]
 {
-	#Create If not exists the log file
+    #Create If not exists the log file
     If(!(Test-Path -Path $logFile))
     {
         New-Item -Path $logFile -ItemType file | Out-Null
